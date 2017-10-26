@@ -1,0 +1,73 @@
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+        <!-- The Grid -->
+        <div class="w3-row">
+          <!-- Left Column -->
+          <div class="w3-col m3">
+            <!-- Profile -->
+            <div class="w3-card-2 w3-round w3-white">
+              <div class="w3-container">
+               <h4 class="w3-center">Profil</h4>
+               <p class="w3-center"><img src="/public/user.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+               <hr>
+               <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Bilgi</p>
+               <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Bilgi</p>
+               <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> Bilgi</p>
+              </div>
+            </div>
+            <br>
+
+            
+            
+          
+            <!-- Alert Box -->
+            <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+              <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+                <i class="fa fa-remove"></i>
+              </span>
+              <%if(kullaniciAdi){%>
+              <p><strong>Selam!</strong></p>
+              <p>Hoşgeldin <%=kullaniciAdi%></p>
+              <%}else{%>
+                <p><strong>Selam!</strong></p>
+                <p>Hoşgeldin...></p>
+                <%}%>
+            </div>
+          
+            <h5 style="text-align: center;color:darkblue">Son Eklenenler</h5><hr>
+            <%for(var i=0;i<yazilar.length;i++){%>  
+            <div class="w3-container">
+                <a href="/" class=""  style="color:orangered"><i class="fa fa-quote-left fa-fw w3-margin-right w3-text-theme" ></i><%=yazilar[i].baslik%></a>                
+                <hr>
+               </div>
+               <%}%>
+
+          <!-- End Left Column -->
+          </div>
+         
+          <!-- Middle Column -->
+          <div class="w3-col m8" style="margin-left:61px;margin-top:-10px">
+          
+            <%for(var i=0;i<yazilar.length;i++){%>  
+            <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>     
+           
+              <h4 style="color:crimson"><%=yazilar[i].baslik%></h4><br>
+              <img src="<%=yazilar[i].gorsel%>" style="width:70%;height:250px;margin-left:110px" >
+              <hr class="w3-clear">
+              <p><%=yazilar[i].metin%></p>
+             
+            </div>
+            <%}%>
+            
+          <!-- End Middle Column -->
+          </div>
+          
+        
+        <!-- End Grid -->
+        </div>
+        
+      <!-- End Page Container -->
+      </div>
+      <br>
+      

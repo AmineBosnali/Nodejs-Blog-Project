@@ -1,0 +1,39 @@
+<div class="container" style="margin-top:100px">
+<form name="form2" id="form2"  action="/login/yazi" class="form-horizontal"  method="POST">
+
+  <div class="form-group">
+      <label for="exampleTextarea">Metin başlığı ekle</label>
+      <textarea class="form-control" id="exampleTextarea" rows="1" name="baslik"  placeholder="Başlık"></textarea>
+    </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Yeni metin ekle</label>
+          <textarea class="form-control" id="exampleTextarea" rows="11" name="metin"  placeholder="Metin..."></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputFile">Yeni Görsel Ekle</label>
+          <input type="file" class="form-control-file" onchange="base64Resim()" aria-describedby="fileHelp" name="file" id="file">
+          <input type="hidden" name="gorsel" id="gorsel" />
+          <small id="fileHelp" class="form-text text-muted">Metin için görsel ekleyiniz.</small>
+        </div>
+        
+     
+
+        <input type="submit" class="btn btn-primary" value="Ekle">
+        <a href="/" class="btn btn-warning btn pull-right">Anasayfa</a>
+      </form>
+      </div>
+
+      <script>
+        function base64Resim(){
+          var reader = new FileReader();
+          var file2 = document.getElementById("file").files[0];
+          reader.readAsDataURL(file2);
+          reader.onload = function () {
+          
+            $("#gorsel").val(reader.result);
+            console.log($("#gorsel").val());
+          };
+        }
+  
+      </script>
